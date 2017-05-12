@@ -4,22 +4,33 @@ Create a function that returns the sum of the two lowest positive numbers given 
 
 For example, when an array is passed like [19,5,42,2,77], the output should be 7. */
 
+// const numbers = [19, 5, 42, 2, 77];
+
+// const lowestNumber = Math.min(...numbers);
+// const highestNumber = Math.max(...numbers);
+
+// const secondLowest = (function() {
+// 	for (var i = 0; i < numbers.length; i++){
+// 		if (numbers[i] > lowestNumber && numbers[i] < highestNumber)
+// 			return i;
+// 	}
+// }());
+
+
+// document.write(lowestNumber);
+// document.write(highestNumber);
+// document.write(secondLowest);
+
+// const sum = lowestNumber + secondLowest;
+// document.write(sum);
+
+/* Mariel helped me find the .sort method. */
+
 const numbers = [19, 5, 42, 2, 77];
 
-const lowestNumber = Math.min(...numbers);
-const highestNumber = Math.max(...numbers);
+numbers.sort(function(a, b) {
+  return a - b;
+});
 
-const secondLowest = (function() {
-	for (var i = 0; i < numbers.length; i++){
-		if (numbers[i] > lowestNumber && numbers[i] < highestNumber)
-			return i;
-	}
-}());
-
-
-document.write(lowestNumber);
-document.write(highestNumber);
-document.write(secondLowest);
-
-const sum = lowestNumber + secondLowest;
-document.write(sum);
+const answer = numbers[0] + numbers[1];
+document.write(answer);
